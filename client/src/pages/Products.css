@@ -1,0 +1,41 @@
+.products {
+  display: flex;
+}
+
+.search {
+  display: flex;
+  margin: 10px;
+  background-color: #FCF7E5;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.category {
+    font-size: 15px;
+}
+
+.inputField {
+  flex-grow: 1;
+  outline: none;
+  padding: 6px 20px;
+  border: 1px solid #dadce0;
+  font-size:18px;
+  border-radius:5px;
+}
+
+.inputField:focus {
+  border: 2px solid royalblue;
+}
+
+.btn {
+  flex-grow: 1;
+  padding: 6px 20px;
+  border: 1px solid #dadce0;
+}
+
+.searchIcon svg {
+  font-size: 35px;
+}
