@@ -1,0 +1,35 @@
+import requests
+import pandas as pd
+from lxml import etree
+import pymysql
+import re
+from sqlalchemy import create_engine
+conn = pymysql.connect(host='sh-cynosdbmysql-grp-gt91zapg.sql.tencentcdb.com', port=26963, user='root', password='!abc123456', db='data_center')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2006_results_CINT2006 SELECT * FROM cpu2006_results WHERE Benchmark = "CINT2006"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2006_results_CFP2006 SELECT * FROM cpu2006_results WHERE Benchmark = "CFP2006"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2006_results_CINT2006rate SELECT * FROM cpu2006_results WHERE Benchmark = "CINT2006rate"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2006_results_CFP2006rate SELECT * FROM cpu2006_results WHERE Benchmark = "CFP2006rate"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2017_results_CINT2017 SELECT * FROM cpu2017_results WHERE Benchmark = "CINT2017"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2017_results_CFP2017 SELECT * FROM cpu2017_results WHERE Benchmark = "CFP2017"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2017_results_CINT2017rate SELECT * FROM cpu2017_results WHERE Benchmark = "CINT2017rate"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_cpu2017_results_CFP2017rate SELECT * FROM cpu2017_results WHERE Benchmark = "CFP2017rate"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_jbb2015_results_JBB2015COMP SELECT * FROM jbb2015_results WHERE Benchmark = "JBB2015COMP"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_jbb2015_results_JBB2015MULTI SELECT * FROM jbb2015_results WHERE Benchmark = "JBB2015MULTI"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_jbb2015_results_JBB2015DIST SELECT * FROM jbb2015_results WHERE Benchmark = "JBB2015DIST"')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_jvm2008_results SELECT * FROM jvm2008_results')
+cur = conn.cursor()
+cur.execute('INSERT INTO DW_power_ssj2008_results SELECT * FROM power_ssj2008_results')
+cur.close()
+conn.close()
